@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /*
-Фильтр, исключающий рейсы, где общее время, проведённое на земле более 2 часов.
+Фильтр, исключающий рейсы, где общее время, проведённое на земле, более 2 часов.
 */
 public class ExcessiveGroundTimeFilter implements FlightFilter {
     private static final long MAX_GROUND_TIME_HOURS = 2;
@@ -24,11 +24,7 @@ public class ExcessiveGroundTimeFilter implements FlightFilter {
             totalGroundTime += Duration.between(currentArrival, nextDeparture).toHours();
         }
 
-        if (totalGroundTime > MAX_GROUND_TIME_HOURS) {
-            return false;
-        }
-
-        return true;
+        return totalGroundTime <= MAX_GROUND_TIME_HOURS;
     }
 
 }

@@ -1,7 +1,7 @@
 package com.gridnine.testing;
 
 /*
-Фильтр, исключающий рейсы с прибытием до вылета
+Фильтр, исключающий рейсы, где дата прибытия раньше даты вылета
 */
 public class ArrivalBeforeDepartureFilter implements FlightFilter {
     @Override

@@ -3,7 +3,7 @@ package com.gridnine.testing;
 import java.time.LocalDateTime;
 
 /*
-Фильтр, исключающий рейсы, у которых вылет раньше текущего времени
+Фильтр, исключающий рейсы, у которых время вылета раньше текущего времени
 */
 public class DepartureBeforeNowFilter implements FlightFilter {
     private final LocalDateTime now;
